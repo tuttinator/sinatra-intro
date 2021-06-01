@@ -4,6 +4,15 @@ get '/' do
   'Hello world!'
 end
 
+get '/now' do
+  code = "<%= Time.now %>"
+  erb code
+end
+
+get '/template' do
+  erb :index, locals: { foo: 'bar' }
+end
+
 
 post '/oauth' do
   # params = { key: 'value' }
